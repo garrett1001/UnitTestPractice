@@ -85,6 +85,13 @@ TEST(PracticeTest, is_symbol_not_a_palindrome)
     ASSERT_FALSE(actual);
 }
 
+TEST(PracticeTest, is_space_a_palindrome)
+{
+    Practice obj;
+    bool actual = obj.isPalindrome(" a a ");
+    ASSERT_TRUE(actual);
+}
+
 /* Test sortDescending */
 TEST(PracticeTest, simple_sort)
 {
@@ -108,4 +115,52 @@ TEST(PracticeTest, sorted_simple_sort)
     ASSERT_EQ(first, 3);
 	ASSERT_EQ(second, 2);
 	ASSERT_EQ(third, 1);
+}
+
+TEST(PracticeTest, mixed_simple_sort)
+{
+    Practice obj;
+	int first = 1;
+	int second = 3;
+	int third = 2;
+	obj.sortDescending(first, second, third);
+    ASSERT_EQ(first, 3);
+	ASSERT_EQ(second, 2);
+	ASSERT_EQ(third, 1);
+}
+
+TEST(PracticeTest, negative_sort)
+{
+    Practice obj;
+	int first = -1;
+	int second = -2;
+	int third = -3;
+	obj.sortDescending(first, second, third);
+    ASSERT_EQ(first, -1);
+	ASSERT_EQ(second, -2);
+	ASSERT_EQ(third, -3);
+}
+
+TEST(PracticeTest, similar_sort)
+{
+    Practice obj;
+	int first = 3;
+	int second = 2;
+	int third = 3;
+	obj.sortDescending(first, second, third);
+    ASSERT_EQ(first, 3);
+	ASSERT_EQ(second, 3);
+	ASSERT_EQ(third, 2);
+}
+
+TEST(PracticeTest, same_sort)
+{
+    Practice obj;
+	int first = 0;
+	int second = 0;
+	int third = 0;
+	obj.sortDescending(first, second, third);
+    ASSERT_EQ(first, 0);
+	ASSERT_EQ(second, 0);
+	ASSERT_EQ(third, 0);
 }
