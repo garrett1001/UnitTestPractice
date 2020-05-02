@@ -74,7 +74,7 @@ TEST(PracticeTest, is_integer_not_a_palindrome)
 TEST(PracticeTest, is_symbol_palindrome)
 {
     Practice obj;
-    bool actual = obj.isPalindrome("<($_$)>");
+    bool actual = obj.isPalindrome("o$_$o");
     ASSERT_TRUE(actual);
 }
 
